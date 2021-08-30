@@ -47,7 +47,7 @@ namespace NLA.NotificationAPI.RestAPI.Controllers
 
             sbMessageBody.Replace("{WebsiteName}", _settings.WebsiteName);
             sbMessageBody.Replace("{customerFirstName}", registerCustomer.FirstName);
-            sbMessageBody.Replace("{customerFirstName}", registerCustomer.LastName);
+            sbMessageBody.Replace("{customerLastName}", registerCustomer.LastName);
             sbMessageBody.Replace("{activationUrl}", activationUrl);
 
             EmailSender.SendEmail(_settings.SendGridApiKey, _settings.EmailSenderAddress, registerCustomer.Email,
