@@ -14,5 +14,9 @@
     <ProjectReference Include="..\NLA.NotificationAPI.Services\NLA.NotificationAPI.Services.csproj" />
     <ProjectReference Include="..\NLA.NotificationAPI.Contracts\NLA.NotificationAPI.Contracts.csproj" />
   </ItemGroup>
-
+<ItemGroup>
+    <None Update="EmailTemplates\CustomerRegistration.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
