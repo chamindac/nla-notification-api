@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifapi
+  labels:
+    app: notif-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: notifapi
+  template:
+    metadata:
+      labels:
+        app: notif-api
+        service: notifapi
+    spec:
+      containers:
+        - name: notifapi
+          image: acrch.azurecr.io/nla/notifapi:1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
